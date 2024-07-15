@@ -1,0 +1,51 @@
+<div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource">
+        <ng-container matColumnDef="first-name">
+            <th mat-header-cell *matHeaderCellDef>First Name</th>
+            <td mat-cell *matCellDef="let agent">{{agent.firstName}}</td>
+        </ng-container>
+        <ng-container matColumnDef="last-name">
+            <th mat-header-cell *matHeaderCellDef>Last Name</th>
+            <td mat-cell *matCellDef="let agent">{{agent.lastName}}</td>
+        </ng-container>
+        <ng-container matColumnDef="age">
+            <th mat-header-cell *matHeaderCellDef>Age</th>
+            <td mat-cell *matCellDef="let agent">{{agent.age}}</td>
+        </ng-container>
+        <ng-container matColumnDef="gender">
+            <th mat-header-cell *matHeaderCellDef>Sex</th>
+            <td mat-cell *matCellDef="let agent">{{agent.gender=='male'?'M':'F'}}</td>
+        </ng-container>
+        <ng-container matColumnDef="username">
+            <th mat-header-cell *matHeaderCellDef>Username</th>
+            <td mat-cell *matCellDef="let agent">{{agent.username}}</td>
+        </ng-container>
+        <ng-container matColumnDef="city">
+            <th mat-header-cell *matHeaderCellDef>City</th>
+            <td mat-cell *matCellDef="let agent">{{agent.city}}</td>
+        </ng-container>
+        <ng-container matColumnDef="state">
+            <th mat-header-cell *matHeaderCellDef>State</th>
+            <td mat-cell *matCellDef="let agent">{{agent.state}}</td>
+        </ng-container>
+        <ng-container matColumnDef="country">
+            <th mat-header-cell *matHeaderCellDef>Country</th>
+            <td mat-cell *matCellDef="let agent">{{agent.country}}</td>
+        </ng-container>
+        <ng-container matColumnDef="role">
+            <th mat-header-cell *matHeaderCellDef>Role</th>
+            <td mat-cell *matCellDef="let agent">{{agent.role}}</td>
+        </ng-container>
+        <ng-container matColumnDef="action">
+            <th mat-header-cell *matHeaderCellDef>Action</th>
+            <td mat-cell *matCellDef="let agent">
+                <button [routerLink]="['/agent', agent.id]">{{agent.action}}</button>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 20, 50]" showFirstLastButtons aria-label="Select page of agents">
+    </mat-paginator>
+</div>

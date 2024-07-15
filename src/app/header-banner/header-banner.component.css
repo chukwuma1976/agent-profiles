@@ -1,0 +1,17 @@
+h1 {
+    font-size: 3.125rem;
+    color: darkred;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+  }
+
+header {
+  display: flex;
+  justify-content: center;
+  background-color: whitesmoke;
+}
+
+img {
+  height: 100px;
+  width: auto;
+}

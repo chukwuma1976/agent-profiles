@@ -1,0 +1,12 @@
+.mat-column-username {
+    font-style: italic;
+}
+
+.mat-column-last-name {
+    font-weight: bolder;
+    color: darkblue;
+}
+
+.mat-column-first-name {
+    font-weight: bold;
+}
