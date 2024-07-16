@@ -29,7 +29,7 @@ export class AgentListComponent {
   @ViewChild(MatPaginator) paginator?: MatPaginator;
 
   constructor(private agentsService: AgentsService) {
-    this.agentsService.getUsers().subscribe((data: any) => {
+    this.agentsService.getUsers().subscribe((data: any) => { console.log(data);
       this.agentList = data.users
       this.agentTable = this.agentList?.map(agent => {
         const { id, firstName, lastName, age, gender, username, address, role } = agent;

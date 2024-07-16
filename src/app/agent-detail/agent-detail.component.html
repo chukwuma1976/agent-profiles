@@ -32,15 +32,17 @@
     </mat-card-content>
     <div class="information">
         <div class="nav-buttons">
-            <button mat-raised-button (click)="goToAddress()">Address</button>
-            <button mat-raised-button (click)="goToBankCard()">Bank Card</button>
-            <button mat-raised-button (click)="goToCompany()">Company</button>
-            <button mat-raised-button (click)="goToCrypto()">Cryptocurrency</button>
+            <button mat-raised-button [ngClass]="{'active': isBtnActive === 'address'}" (click)="goToAddress()">Address</button>
+            <button mat-raised-button [ngClass]="{'active': isBtnActive === 'card'}" (click)="goToBankCard()">Bank Card</button>
+            <button mat-raised-button [ngClass]="{'active': isBtnActive === 'comp'}" (click)="goToCompany()">Company</button>
+            <button mat-raised-button [ngClass]="{'active': isBtnActive === 'crypto'}" (click)="goToCrypto()">Cryptocurrency</button>
             <button mat-raised-button class = "go-back" (click)="backToAgentList()">
                 <mat-icon>arrow_back</mat-icon>
                 Agent List
             </button>
         </div>
-        <router-outlet></router-outlet>
+        <div class="router">
+            <router-outlet></router-outlet>
+        </div>
     </div>
 </mat-card>

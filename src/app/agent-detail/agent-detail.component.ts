@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../../interfaces/user';
 import { AgentsService } from '../../service/agents.service';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import { NgIf } from '@angular/common';
+import { Router, ActivatedRoute } from '@angular/router';
+import { NgIf, NgClass } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import {MatCardModule} from '@angular/material/card';
 import {MatDividerModule} from '@angular/material/divider';
@@ -12,7 +12,7 @@ import { MatButtonModule } from '@angular/material/button';
 @Component({
   selector: 'app-agent-detail',
   standalone: true,
-  imports: [NgIf, RouterOutlet, MatCardModule, MatDividerModule, MatIconModule, MatButtonModule],
+  imports: [NgIf, RouterOutlet, MatCardModule, MatDividerModule, MatIconModule, MatButtonModule, NgClass],
   templateUrl: './agent-detail.component.html',
   styleUrl: './agent-detail.component.css'
 })
@@ -20,6 +20,7 @@ export class AgentDetailComponent implements OnInit {
 
   agent?: User;
   id!: string;
+  isBtnActive!: string;
 
   constructor(
     private agentService: AgentsService,
@@ -33,7 +34,6 @@ export class AgentDetailComponent implements OnInit {
       this.agent = data;
       this.goToAddress();
     });
-
   }
 
   backToAgentList(){
@@ -41,18 +41,22 @@ export class AgentDetailComponent implements OnInit {
   }
 
   goToAddress() {
+    this.isBtnActive = 'address';
     this.router.navigate([`/agent/${this.id}/address`], {state: this.agent?.address});
   }
 
   goToBankCard() {
+    this.isBtnActive = 'card';
     this.router.navigate([`/agent/${this.id}/bank-card`], {state: this.agent?.bank});
   }
 
   goToCompany() {
+    this.isBtnActive = 'comp';
     this.router.navigate([`/agent/${this.id}/company`], {state: this.agent?.company});
   }
 
   goToCrypto() {
+    this.isBtnActive = 'crypto';
     this.router.navigate([`/agent/${this.id}/cryptocurrency`], {state: this.agent?.crypto});
   }
 
