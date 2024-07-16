@@ -4,11 +4,10 @@
         <p><b>{{company?.name.toUpperCase()}}</b></p>
         <p>Department of {{company?.department}}</p>
         <p><b>Title:</b> {{company?.title.toUpperCase()}}</p>
-    </div>
-    <h3>Address:</h3>
-    <div>
+        <p><b>Address:</b><p>
         <p class="indent">{{company?.address?.address}}</p>
-        <p class="indent">{{company?.address?.city}}, {{company?.address?.state}} ({{company?.address?.stateCode}}) {{company?.address?.postalCode}}</p>
+        <p class="indent">{{company?.address?.city}}, {{company?.address?.state}} ({{company?.address?.stateCode}})
+            {{company?.address?.postalCode}}</p>
         <p class="indent">{{company?.address?.country}}</p>
     </div>
 </div>

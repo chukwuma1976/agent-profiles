@@ -6,12 +6,12 @@ img {
 
 .name-header {
     display: flex;
-    justify-content: left;
+    justify-content: center;
     background-color: aliceblue;
 }
 
 h1 {
-    font-size: 30px;
+    font-size: 50px;
     padding-right: 10px;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
@@ -37,11 +37,7 @@ h2 {
 }
 
 button {
-    height: 30px;
-    width: 100px;
     margin: 10px 50px;
-    border-radius: 0.75em;
-    background-color: beige;
 }
 
 .nav-buttons {
@@ -51,9 +47,7 @@ button {
 }
 
 .go-back {
-    background-color: green;
-    height: 40px;
-    border-radius: 1em;
+    background-color: lightgreen;
 }
 
 .information {
@@ -61,6 +55,10 @@ button {
     background-color: antiquewhite;
 }
 
+.bio {
+    font-size: 20px;
+}
+
 router-outlet {
-    margin-left: 50px;
+    margin-left: 20%;
 }

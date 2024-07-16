@@ -1,5 +1,9 @@
 <header>
-    <img [src]="agentImage">
+    <img class="left-image" [src]="agentImage">
     <h1>Agent Profiles</h1>    
-    <img [src]="spyGlass">
+    <img class="right-image"[src]="spyGlass">
+    <div>
+        <button mat-raised-button [routerLink]="['/agents-home-page']">Home</button>
+        <button mat-raised-button [routerLink]="['/agents']">Agent List</button>
+    </div>
 </header>

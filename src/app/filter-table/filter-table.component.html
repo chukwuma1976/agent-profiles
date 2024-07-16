@@ -1,0 +1,9 @@
+<div>
+    <label>Filter by name</label>
+    <input type="text" class="form-control" [(ngModel)]="name" placeholder="Enter a name here" (ngModelChange)="changeName($event)">
+    <label>Select a role</label>
+    <select name="role" (click)="changeRole($event)">
+        <option value="">All</option>
+        <option *ngFor="let role of roles" [value]="role">{{role}}</option>
+    </select>
+</div>

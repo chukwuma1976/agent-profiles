@@ -7,11 +7,12 @@ import { RouterOutlet } from '@angular/router';
 import {MatCardModule} from '@angular/material/card';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatIconModule} from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-agent-detail',
   standalone: true,
-  imports: [NgIf, RouterOutlet, MatCardModule, MatDividerModule, MatIconModule],
+  imports: [NgIf, RouterOutlet, MatCardModule, MatDividerModule, MatIconModule, MatButtonModule],
   templateUrl: './agent-detail.component.html',
   styleUrl: './agent-detail.component.css'
 })
@@ -28,7 +29,11 @@ export class AgentDetailComponent implements OnInit {
 
   ngOnInit(){
     this.id = this.route.snapshot.paramMap.get('id')!;
-    this.agentService.getUserById(this.id).subscribe((data: any) => this.agent = data);
+    this.agentService.getUserById(this.id).subscribe((data: any) => {
+      this.agent = data;
+      this.goToAddress();
+    });
+
   }
 
   backToAgentList(){

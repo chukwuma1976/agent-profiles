@@ -1,4 +1,5 @@
 <div class="mat-elevation-z8">
+    <app-filter-table (nameEvent)="filterName($event)" (roleEvent)="filterRole($event)"></app-filter-table>
     <table mat-table [dataSource]="dataSource">
         <ng-container matColumnDef="first-name">
             <th mat-header-cell *matHeaderCellDef>First Name</th>

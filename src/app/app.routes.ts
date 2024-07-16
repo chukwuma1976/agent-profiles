@@ -6,8 +6,10 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { BankCardComponent } from './bank-card/bank-card.component';
 import { CompanyComponent } from './company/company.component';
 import { CryptoComponent } from './crypto/crypto.component';
+import { HomePageComponent } from './home-page/home-page.component';
 
 export const routes: Routes = [
+    { path: 'agents-home-page', component: HomePageComponent},
     { path: 'agents', component: AgentListComponent },
     {
         path: 'agent/:id', component: AgentDetailComponent,
@@ -19,6 +21,6 @@ export const routes: Routes = [
             { path: 'cryptocurrency', component: CryptoComponent }
         ]
     },
-    { path: '', redirectTo: 'agent-list', pathMatch: 'full' },
+    { path: '', redirectTo: 'agents-home-page', pathMatch: 'full' },
     { path: '**', component: NotFoundComponent }
 ];

@@ -4,9 +4,16 @@ h2 {
     font-weight: bolder;
     font-style: oblique;
     padding-right: 50px;
+    color: darkblue
 }
 
 .address {
     display: flex;
     justify-content: center;
+}
+
+mat-icon {
+    color: blue;
+    font-size: 30px;
+    width: auto;
 }

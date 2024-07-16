@@ -1,0 +1,19 @@
+h1 {
+    text-align: center;
+    color: darkblue;
+}
+
+body {
+    background-color: aliceblue;
+    /* display: flex; */
+}
+
+img {
+    height: 500px;
+    width: auto;
+}
+
+div {
+    display: flex;
+    justify-content: center;
+}

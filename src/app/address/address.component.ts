@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-address',
   standalone: true,
-  imports: [],
+  imports: [MatIconModule],
   templateUrl: './address.component.html',
   styleUrl: './address.component.css'
 })

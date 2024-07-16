@@ -1,6 +1,7 @@
 h2 {
     font-size: 20px;
     font-weight: bold;
+    color: darkblue;
 }
 
 .indent {
@@ -13,7 +14,6 @@ h2 {
 }
 
 mat-card-header {
-    background-color: goldenrod;
     display: flex;
     justify-content: center;
 }
@@ -21,6 +21,7 @@ mat-card-header {
 mat-card {
     background-color: gold;
     width: 400px;
+    border: 5px solid silver;
 }
 
 p {

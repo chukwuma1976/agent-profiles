@@ -4,10 +4,9 @@
         <img [src]="agent?.image">
     </mat-card-header>
     <mat-card-content class="card-content">
-        <div class="content">
-            <p><b>Role:</b> {{agent?.role?.toUpperCase()}} </p>
-            <p><b>Age:</b> {{agent?.age}}</p>
-            <p><b>Gender:</b> {{agent?.gender?.toUpperCase()}}</p>
+        <div class="content bio">
+            <p>{{agent?.firstName}} is a {{agent?.age}} year old {{agent?.gender?.toUpperCase()}}.</p>
+            <p>{{agent?.gender==='male'?'His':'Her'}} role is: {{agent?.role?.toUpperCase()}}.</p>
         </div>
         <div class="content">
             <p *ngIf="agent?.maidenName!==''"><b>Maiden Name:</b> {{agent?.maidenName}}</p>
@@ -17,7 +16,6 @@
             <p><b>BirthDate:</b> {{agent?.birthDate}}</p>
         </div>
         <div class="content">
-            <p><b>Blood Type:</b> {{agent?.bloodGroup}}</p>
             <p><b>Height:</b> {{agent?.height}} cm</p>
             <p><b>Weight:</b> {{agent?.weight}} kg</p>
             <p><b>Eye Color: </b> <span [style.color]="agent?.eyeColor">{{agent?.eyeColor}}</span></p>
@@ -26,6 +24,7 @@
             </p>
         </div>
         <div class="content">
+            <p><b>Blood Type:</b> {{agent?.bloodGroup}}</p>
             <p><b>Education:</b> {{agent?.university}}</p>
             <p><b>EIN:</b> {{agent?.ein}}</p>
             <p><b>SSN:</b> {{agent?.ssn}}</p>
@@ -33,12 +32,13 @@
     </mat-card-content>
     <div class="information">
         <div class="nav-buttons">
-            <button mat-button (click)="goToAddress()">Address</button>
-            <button mat-button (click)="goToBankCard()">Bank Card</button>
-            <button mat-button (click)="goToCompany()">Company</button>
-            <button mat-button (click)="goToCrypto()">Cryptocurrency</button>
-            <button class = "go-back" (click)="backToAgentList()">
+            <button mat-raised-button (click)="goToAddress()">Address</button>
+            <button mat-raised-button (click)="goToBankCard()">Bank Card</button>
+            <button mat-raised-button (click)="goToCompany()">Company</button>
+            <button mat-raised-button (click)="goToCrypto()">Cryptocurrency</button>
+            <button mat-raised-button class = "go-back" (click)="backToAgentList()">
                 <mat-icon>arrow_back</mat-icon>
+                Agent List
             </button>
         </div>
         <router-outlet></router-outlet>

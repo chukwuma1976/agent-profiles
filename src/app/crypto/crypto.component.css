@@ -4,9 +4,14 @@ h2 {
     font-weight: bold;
     font-style: oblique;
     padding-right: 50px;
+    color: darkblue;
 }
 
 .crypto {
     display: flex;
     justify-content: center;
+}
+
+mat-icon {
+    color: blue;
 }
