@@ -1,42 +1,46 @@
 <mat-card appearance="outlined">
     <mat-card-header class="name-header">
-        <div>
-            <h1>{{agent?.firstName}} {{agent?.lastName}}</h1>
-            <p>Role: {{agent?.role}} </p>
-            <p>Age: {{agent?.age}}</p>
-            <p>Gender: {{agent?.gender}}</p>
-        </div>
+        <h1>{{agent?.firstName}} {{agent?.lastName}}</h1>
         <img [src]="agent?.image">
     </mat-card-header>
-    <mat-divider></mat-divider>
     <mat-card-content class="card-content">
         <div class="content">
-            <p *ngIf="agent?.maidenName!==''">Maiden Name: {{agent?.maidenName}}</p>
-            <p>Email: {{agent?.email}}</p>
-            <p>Phone number: {{agent?.phone}}</p>
-            <p>Code Name: {{agent?.username}}</p>
-            <p>BirthDate: {{agent?.birthDate}}</p>
+            <p><b>Role:</b> {{agent?.role?.toUpperCase()}} </p>
+            <p><b>Age:</b> {{agent?.age}}</p>
+            <p><b>Gender:</b> {{agent?.gender?.toUpperCase()}}</p>
         </div>
         <div class="content">
-            <p>Blood Type: {{agent?.bloodGroup}}</p>
-            <p>Height: {{agent?.height}} cm</p>
-            <p>Weight: {{agent?.weight}} kg</p>
-            <p>Eye Color: {{agent?.eyeColor}}</p>
-            <p>Hair: {{agent?.hair?.color}} and {{agent?.hair?.type}}</p>
+            <p *ngIf="agent?.maidenName!==''"><b>Maiden Name:</b> {{agent?.maidenName}}</p>
+            <p><b>Email:</b> {{agent?.email}}</p>
+            <p><b>Phone number:</b> {{agent?.phone}}</p>
+            <p><b>Code Name:</b> {{agent?.username?.toUpperCase()}}</p>
+            <p><b>BirthDate:</b> {{agent?.birthDate}}</p>
         </div>
         <div class="content">
-            <p>Education: {{agent?.university}}</p>
-            <p>EIN: {{agent?.ein}}</p>
-            <p>SSN: {{agent?.ssn}}</p>
+            <p><b>Blood Type:</b> {{agent?.bloodGroup}}</p>
+            <p><b>Height:</b> {{agent?.height}} cm</p>
+            <p><b>Weight:</b> {{agent?.weight}} kg</p>
+            <p><b>Eye Color: </b> <span [style.color]="agent?.eyeColor">{{agent?.eyeColor}}</span></p>
+            <p>
+                <b>Hair: </b> <span [style.color]="agent?.hair?.color!=='White' ? agent?.hair?.color : 'black'">{{agent?.hair?.color}}</span> and {{agent?.hair?.type}}
+            </p>
+        </div>
+        <div class="content">
+            <p><b>Education:</b> {{agent?.university}}</p>
+            <p><b>EIN:</b> {{agent?.ein}}</p>
+            <p><b>SSN:</b> {{agent?.ssn}}</p>
         </div>
     </mat-card-content>
-    <div>
-        <button mat-button (click)="goToAddress()">Address</button>
-        <button mat-button (click)="goToBankCard()">Bank Card</button>
-        <button mat-button (click)="goToCompany()">Company</button>
-        <button mat-button (click)="goToCrypto()">Cryptocurrency</button>
+    <div class="information">
+        <div class="nav-buttons">
+            <button mat-button (click)="goToAddress()">Address</button>
+            <button mat-button (click)="goToBankCard()">Bank Card</button>
+            <button mat-button (click)="goToCompany()">Company</button>
+            <button mat-button (click)="goToCrypto()">Cryptocurrency</button>
+            <button class = "go-back" (click)="backToAgentList()">
+                <mat-icon>arrow_back</mat-icon>
+            </button>
+        </div>
+        <router-outlet></router-outlet>
     </div>
-    <mat-divider></mat-divider>
-    <router-outlet></router-outlet>
 </mat-card>
-<button (click)="backToAgentList()">Back to List</button>

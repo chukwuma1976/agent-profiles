@@ -1,11 +1,8 @@
-<h2>Address</h2>
-<section>
-    <p>Street Address: {{address?.address}}</p>
-    <p>City: {{address?.city}}</p>
-    <p>State: {{address?.state}} ({{address?.stateCode}})</p>
-    <p>Postal Code: {{address?.postalCode}}</p>
-    <p>Country: {{address?.country}}</p>
-    <p>Coordinates</p>
-    <p class="indent">Latitude: {{address?.coordinates?.lat}}</p>
-    <p class="indent">Longitude: {{address?.coordinates?.lng}}</p>
-</section>
+<div class="address">
+    <h2>Address: </h2>
+    <section>
+        <p>{{address?.address}}</p>
+        <p>{{address?.city}}, {{address?.state}} ({{address?.stateCode}})  {{address?.postalCode}}</p>
+        <p>{{address?.country}}</p>
+    </section>
+</div>

@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import {MatCardModule} from '@angular/material/card';
+import {MatDividerModule} from '@angular/material/divider';
 
 @Component({
   selector: 'app-bank-card',
   standalone: true,
-  imports: [],
+  imports: [MatCardModule, MatDividerModule],
   templateUrl: './bank-card.component.html',
   styleUrl: './bank-card.component.css'
 })

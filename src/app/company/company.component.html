@@ -1,14 +1,14 @@
-<h2>Company</h2>
-<section>
-    <p>{{company?.name}}</p>
-    <p>Department of {{company?.department}}</p>
-    <p>Title: {{company?.title}}</p>
-    <p>Address:</p>
+<div class="company">
+    <h2>Company: </h2>
     <div>
-        <p class="indent">Street Address: {{company?.address?.address}}</p>
-        <p class="indent">City: {{company?.address?.city}}</p>
-        <p class="indent">State: {{company?.address?.state}} ({{company?.address?.stateCode}})</p>
-        <p class="indent">Postal Code: {{company?.address?.postalCode}}</p>
-        <p class="indent">Country: {{company?.address?.country}}</p>
+        <p><b>{{company?.name.toUpperCase()}}</b></p>
+        <p>Department of {{company?.department}}</p>
+        <p><b>Title:</b> {{company?.title.toUpperCase()}}</p>
     </div>
-</section>
+    <h3>Address:</h3>
+    <div>
+        <p class="indent">{{company?.address?.address}}</p>
+        <p class="indent">{{company?.address?.city}}, {{company?.address?.state}} ({{company?.address?.stateCode}}) {{company?.address?.postalCode}}</p>
+        <p class="indent">{{company?.address?.country}}</p>
+    </div>
+</div>

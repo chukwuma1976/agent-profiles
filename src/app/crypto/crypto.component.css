@@ -1,8 +1,12 @@
 h2 {
     font-size: 20px;
     text-align: center;
+    font-weight: bold;
+    font-style: oblique;
+    padding-right: 50px;
 }
 
-.indent {
-    text-indent: 50px;
+.crypto {
+    display: flex;
+    justify-content: center;
 }

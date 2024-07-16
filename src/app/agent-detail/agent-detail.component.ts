@@ -6,11 +6,12 @@ import { NgIf } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import {MatCardModule} from '@angular/material/card';
 import {MatDividerModule} from '@angular/material/divider';
+import {MatIconModule} from '@angular/material/icon';
 
 @Component({
   selector: 'app-agent-detail',
   standalone: true,
-  imports: [NgIf, RouterOutlet, MatCardModule, MatDividerModule],
+  imports: [NgIf, RouterOutlet, MatCardModule, MatDividerModule, MatIconModule],
   templateUrl: './agent-detail.component.html',
   styleUrl: './agent-detail.component.css'
 })

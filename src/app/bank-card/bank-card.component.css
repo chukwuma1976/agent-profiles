@@ -1,8 +1,28 @@
 h2 {
     font-size: 20px;
-    text-align: center;
+    font-weight: bold;
 }
 
 .indent {
     text-indent: 50px;
+}
+
+.bank-card {
+    display: flex;
+    justify-content: center;
+}
+
+mat-card-header {
+    background-color: goldenrod;
+    display: flex;
+    justify-content: center;
+}
+
+mat-card {
+    background-color: gold;
+    width: 400px;
+}
+
+p {
+    margin-left: 50px;
 }

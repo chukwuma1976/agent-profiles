@@ -1,8 +1,14 @@
-<h2>Bank Card</h2>
-<section>
-    <p>Expiration Date: {{bank?.cardExpire}}</p>
-    <p>Number: {{bank?.cardNumber}}</p>
-    <p>Type: {{bank?.cardType}}</p>
-    <p>Currency: {{bank?.currency}}</p>
-    <p>IBAN: {{bank?.iban}}</p>
-</section>
+<div class="bank-card">
+    <mat-card appearance="outlined">
+        <mat-card-header>
+            <h2>AGENCY BANK CARD</h2>
+        </mat-card-header>
+        <mat-divider></mat-divider>
+        <section>
+            <p><b>Expiration Date:</b> {{bank?.cardExpire}}</p>
+            <p><b>Number:</b> {{bank?.cardNumber}}</p>
+            <p><b>Type:</b> {{bank?.cardType}} <b>Currency:</b> {{bank?.currency}}</p>
+            <p><b>IBAN:</b> {{bank?.iban}}</p>
+        </section>
+    </mat-card>
+</div>

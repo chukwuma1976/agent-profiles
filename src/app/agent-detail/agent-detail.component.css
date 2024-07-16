@@ -1,12 +1,12 @@
 img {
-    height: 200px;
+    height: 50px;
     width: auto;
     padding-right: 20px;
 }
 
 .name-header {
     display: flex;
-    justify-content: center;
+    justify-content: left;
     background-color: aliceblue;
 }
 
@@ -34,4 +34,33 @@ h2 {
     padding-left: 50px;
     padding-right: 50px;
     padding-top: 20px;
+}
+
+button {
+    height: 30px;
+    width: 100px;
+    margin: 10px 50px;
+    border-radius: 0.75em;
+    background-color: beige;
+}
+
+.nav-buttons {
+    display: flex;
+    flex-direction: column;
+    background-color: lightblue;
+}
+
+.go-back {
+    background-color: green;
+    height: 40px;
+    border-radius: 1em;
+}
+
+.information {
+    display: flex;
+    background-color: antiquewhite;
+}
+
+router-outlet {
+    margin-left: 50px;
 }
