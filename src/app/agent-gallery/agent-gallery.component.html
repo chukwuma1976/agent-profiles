@@ -1,0 +1,11 @@
+<div id="agent">
+    <h1>
+        {{currentAgent.firstName}} {{currentAgent.lastName}}
+        <span><img [src]="currentAgent.image"></span>
+    </h1>
+</div>
+<div id="navigation">
+    <mat-icon (click)="previous()">arrow_back_ios</mat-icon>
+    <p>Previous &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Next</p>
+    <mat-icon (click)="next()">arrow_forward_ios</mat-icon>
+</div>

@@ -1,0 +1,23 @@
+<div>
+    <h1>Statistics</h1>
+    <div class="nav-buttons">
+        <button mat-raised-button [ngClass]="{'active': isBtnActive === 'Gender'}" (click)="updateChart('Gender', genders )">Gender</button>
+        <button mat-raised-button [ngClass]="{'active': isBtnActive === 'Role'}" (click)="updateChart('Role', roles )">Role</button>
+        <button mat-raised-button [ngClass]="{'active': isBtnActive === 'Eye Color'}" (click)="updateChart('Eye Color', eyeColors)">Eye Color</button>
+        <button mat-raised-button [ngClass]="{'active': isBtnActive === 'Hair Color'}" (click)="updateChart('Hair Color', hairColors )">Hair Color</button>
+        <button mat-raised-button [ngClass]="{'active': isBtnActive === 'Hair Type'}" (click)="updateChart('Hair Type', hairTypes )">Hair Type</button>
+        <button mat-raised-button [ngClass]="{'active': isBtnActive === 'Blood Type'}" (click)="updateChart('Blood Type', bloodTypes )">Blood Type</button>
+        <button mat-raised-button [ngClass]="{'active': isBtnActive === 'Education'}" (click)="displayStats('Education', colleges )">Education</button>
+        <button mat-raised-button [ngClass]="{'active': isBtnActive === 'Occupations'}" (click)="displayStats('Occupations', dayJobs )">Occupations</button>
+        <button mat-raised-button [ngClass]="{'active': isBtnActive === 'Companies'}" (click)="displayStats('Companies', companies )">Companies</button>
+    </div>
+    <div *ngIf="displayPieChart">
+        <app-pie-chart [title]="chartTitle" [labels]="chartLabels" [data]="chartData" [colors]="chartColors"></app-pie-chart>
+    </div>
+    <div class="stats" *ngIf="!displayPieChart">
+        <div class="stat-block">
+            <h2>{{chartTitle}}</h2>
+            <p *ngFor="let stat of statsArray">{{stat[0]}}: {{stat[1]}}</p>
+        </div>
+    </div>
+</div>

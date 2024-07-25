@@ -1,0 +1,9 @@
+#agent {
+    display: flex;
+    justify-content: center;
+}
+
+#navigation {
+    display: flex;
+    justify-content: center;
+}

@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { User } from '../../interfaces/user';
+import { User } from '../../models/user';
 import { AgentsService } from '../../service/agents.service';
 import { NgFor } from '@angular/common';
 import { MatTableModule, MatTableDataSource } from '@angular/material/table';
