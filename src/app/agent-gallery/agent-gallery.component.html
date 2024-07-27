@@ -1,11 +1,17 @@
-<div id="agent">
-    <h1>
-        {{currentAgent.firstName}} {{currentAgent.lastName}}
-        <span><img [src]="currentAgent.image"></span>
-    </h1>
-</div>
-<div id="navigation">
-    <mat-icon (click)="previous()">arrow_back_ios</mat-icon>
-    <p>Previous &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Next</p>
-    <mat-icon (click)="next()">arrow_forward_ios</mat-icon>
-</div>
+<main>
+    <div id="navigation">
+        <div class="go-back">
+            <mat-icon class="info" fontIcon="info" [routerLink]="['/agent', currentAgent.id]"></mat-icon>
+        </div>
+        <p>{{currentAgent.firstName}} {{currentAgent.lastName}}</p>
+    </div>
+    <div id="agent">
+        <div class="agent-button" (click)="previous()">
+            <mat-icon class="nav" fontIcon="arrow_back_ios" *ngIf="index!==0"></mat-icon>
+        </div>
+        <img [src]="currentAgent.image">
+        <div class="agent-button"  (click)="next()">
+            <mat-icon class="nav" fontIcon="arrow_forward_ios" *ngIf="index!==maxIndex"></mat-icon>
+        </div>
+    </div>
+</main>

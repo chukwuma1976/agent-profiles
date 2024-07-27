@@ -1,4 +1,13 @@
-export const femaleImageUrls = [
+export const backgroundUrls : string[] = [
+    "https://media.istockphoto.com/id/882844032/vector/detective-spy-man-and-woman-character-private-ivestigation-agent-mafia-gangster.jpg?s=612x612&w=0&k=20&c=_b-_fn1_oJjxHImH5c-tLK0Fnb4lmtJzBoxl_rkD_MY=",
+    "https://www.kindpng.com/picc/m/606-6064244_enhanced-teligentip-formerly-ipitimi-call-center-agents-icon.png",
+    "https://outsourceworkers.com.au/wp-content/uploads/2015/08/tracking-other-agents.png",
+    "https://freepngimg.com/save/128000-agent-business-png-free-photo/782x585",
+    "https://png.pngtree.com/png-clipart/20190630/original/pngtree-silhouette-of-workplace-persons-png-image_4151012.jpg",
+    "https://png.pngtree.com/png-vector/20220429/ourmid/pngtree-walking-people-silhouette-png-image_4559299.png",
+    "https://media.licdn.com/dms/image/C4E12AQHl09VdLcc7-Q/article-cover_image-shrink_600_2000/0/1520227159173?e=2147483647&v=beta&t=dJQnVpJTe6gZbwUCJWMczYRxYEIWdlBCswWrW8XgOi4"
+];
+export const femaleImageUrls : string[] = [
     'https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=600',
     'https://images.pexels.com/photos/3819213/pexels-photo-3819213.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load',
     'https://images.pexels.com/photos/2787341/pexels-photo-2787341.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load',

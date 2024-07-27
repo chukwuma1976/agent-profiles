@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { User } from '../models/user';
+import { femaleImageUrls, maleImageUrls } from '../imageUrl';
 
 @Injectable({
   providedIn: 'root'
@@ -100,6 +101,19 @@ export class AgentsService {
         else companies[agent.company.name]=1;
     })
     return companies;
+  }
+
+  updateImageUrls(agents: User[]){
+    let femaleImages = [...femaleImageUrls];
+    let maleImages = [...maleImageUrls];
+
+    return agents.map((agent: any)=>{
+      if (agent.gender==='female')
+        agent.image = femaleImages.pop()
+      else if (agent.gender=='male')
+        agent.image = maleImages.pop();
+      return agent;
+    })
   }
 
 }

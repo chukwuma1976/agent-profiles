@@ -54,6 +54,7 @@ export class AgentStatisticsComponent {
   updateChart(title: string, dataArray: any[]) {
     if (!this.displayPieChart) this.displayPieChart = true;
     this.isBtnActive = title;
+    dataArray.sort((a,b)=>sortAlphabetically(a,b));
 
     this.chartTitle = title;
     this.chartData = dataArray.map(item => item[1]);
@@ -70,7 +71,25 @@ export class AgentStatisticsComponent {
     this.isBtnActive = title;
     this.chartTitle = title;
 
-    this.statsArray = stats;
+    this.statsArray = [];
+
+    const tempArray: any[] = [...stats];
+    tempArray.sort((a,b)=>sortAlphabetically(a,b));
+    let subArray = []
+    for (let item of tempArray) {
+      subArray.push(item);
+      if ((tempArray.indexOf(item) % 15 == 14) || (tempArray.indexOf(item) === tempArray.length - 1)) {
+        this.statsArray.push(subArray);
+        subArray = [];
+      }
+    }
+
   }
 
 }
+function sortAlphabetically(a: any[], b:any []): number{
+  if (a[0]<b[0]) return -1;
+  if (a[0]>b[0]) return 1;
+  return 0;
+}
+

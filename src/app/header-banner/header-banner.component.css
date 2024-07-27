@@ -8,8 +8,8 @@ h1 {
 header {
   display: flex;
   justify-content: center;
-  background-color: white;
-  width: fit-content;
+  width: 100%;
+  border: 5px solid whitesmoke;
 }
 
 img {

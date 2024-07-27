@@ -1,17 +1,20 @@
 import { Component } from '@angular/core';
 import { User } from '../../models/user';
 import { AgentsService } from '../../service/agents.service';
-import { NgFor } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-agent-gallery',
   standalone: true,
-  imports: [NgFor, MatIconModule],
+  imports: [NgFor, NgIf, MatIconModule, MatButtonModule, RouterLink],
   templateUrl: './agent-gallery.component.html',
   styleUrl: './agent-gallery.component.css'
 })
 export class AgentGalleryComponent {
+
   agentList: User[] = [];
   index = 0;
   maxIndex! : number;
@@ -21,9 +24,9 @@ export class AgentGalleryComponent {
     this.agentsService.getUsers().subscribe((data: any) => {
       this.agentList = data.users
       this.agentList?.sort((a, b) => this.sortByName(a, b));
-      this.maxIndex = this.agentList!.length
+      this.maxIndex = this.agentList!.length-1;
       this.setAgent();
-      this.agentsService.getGenderDistribution(this.agentList);
+      this.agentList = this.agentsService.updateImageUrls(this.agentList);
     });
     
   }
@@ -51,5 +54,5 @@ export class AgentGalleryComponent {
   setAgent(){
     this.currentAgent = this.agentList![this.index]
   }
-  
+
 }

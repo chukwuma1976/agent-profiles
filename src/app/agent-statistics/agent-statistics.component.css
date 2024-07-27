@@ -14,25 +14,44 @@ button.active {
     background-color: yellow;
 }
 
+button {
+    margin: 5px;
+}
+
 .nav-buttons {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-top: 20px;
+    background-color: aliceblue;
 }
 
 .stats {
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
+    width: 1200px
 }
 
 .stat-block {
-    border: 1px solid black;
     padding-left: 20px;
     padding-right: 20px;
-    background-color: whitesmoke;
     margin-top: 20px;
+    width: 350px;
+}
+
+#statistics {
+    display: flex;
 }
 
 p {
     font-size: 15px;
     margin: 0px;
+}
+
+.pie-chart {
+   width: 1000px;
+   margin-left: auto;
+   margin-right: auto;
 }

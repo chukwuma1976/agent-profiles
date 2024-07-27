@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { backgroundUrls } from '../../imageUrl';
 
 @Component({
   selector: 'app-home-page',
@@ -9,6 +10,10 @@ import { Component } from '@angular/core';
 })
 export class HomePageComponent {
 
-  backgroundPic = "https://media.istockphoto.com/id/882844032/vector/detective-spy-man-and-woman-character-private-ivestigation-agent-mafia-gangster.jpg?s=612x612&w=0&k=20&c=_b-_fn1_oJjxHImH5c-tLK0Fnb4lmtJzBoxl_rkD_MY=";
+  backgroundPic = backgroundUrls[0];
 
+  ngOnInit(){
+    let index = Math.floor(Math.random()*backgroundUrls.length)
+    this.backgroundPic = backgroundUrls[index];
+  }
 }

@@ -6,11 +6,12 @@ import { MatTableModule, MatTableDataSource } from '@angular/material/table';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { RouterLink } from '@angular/router';
 import { FilterTableComponent } from "../filter-table/filter-table.component";
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-agent-list',
   standalone: true,
-  imports: [NgFor, MatTableModule, MatPaginatorModule, RouterLink, FilterTableComponent],
+  imports: [NgFor, MatTableModule, MatPaginatorModule, RouterLink, FilterTableComponent, MatButtonModule],
   templateUrl: './agent-list.component.html',
   styleUrl: './agent-list.component.css'
 })
@@ -29,7 +30,7 @@ export class AgentListComponent {
   @ViewChild(MatPaginator) paginator?: MatPaginator;
 
   constructor(private agentsService: AgentsService) {
-    this.agentsService.getUsers().subscribe((data: any) => { console.log(data);
+    this.agentsService.getUsers().subscribe((data: any) => {
       this.agentList = data.users
       this.agentTable = this.agentList?.map(agent => {
         const { id, firstName, lastName, age, gender, username, address, role } = agent;
@@ -64,12 +65,12 @@ export class AgentListComponent {
   }
 
   filterRole(role: string) {
-    this.role=role;
+    this.role = role;
     this.filterTable(this.role, this.name);
   }
 
   filterName(name: string) {
-    this.name=name;
+    this.name = name;
     this.filterTable(this.role, this.name);
   }
 
@@ -80,9 +81,9 @@ export class AgentListComponent {
     }
     if (name !== "") {
       const lowerCaseName = name.toLowerCase();
-      this.agentTable = 
+      this.agentTable =
         this.agentTable
-          .filter((agent: any) => 
+          .filter((agent: any) =>
             agent.firstName.toLowerCase().includes(lowerCaseName) || agent.lastName.toLowerCase().includes(lowerCaseName));
     }
     this.dataSource = new MatTableDataSource<any>(this.agentTable);
