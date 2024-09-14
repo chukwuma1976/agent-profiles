@@ -1,11 +1,12 @@
 <header>
     <img class="left-image" [src]="agentImage">
-    <h1>Agent Profiles</h1>    
-    <img class="right-image"[src]="spyGlass">
+    <h1>Agent Profiles</h1>
+    <img class="right-image" [src]="spyGlass">
     <div>
         <button mat-raised-button [routerLink]="['/agents-home-page']">Home</button>
         <button mat-raised-button [routerLink]="['/agents']">Our Agents</button>
         <button mat-raised-button [routerLink]="['/agent-gallery']">Gallery</button>
         <button mat-raised-button [routerLink]="['/agent-statistics']">Statistics</button>
+        <button mat-raised-button [routerLink]="['/agents-scroll']">Our Agents: Scroll Version</button>
     </div>
 </header>

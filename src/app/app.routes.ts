@@ -9,12 +9,14 @@ import { CryptoComponent } from './crypto/crypto.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { AgentGalleryComponent } from './agent-gallery/agent-gallery.component';
 import { AgentStatisticsComponent } from './agent-statistics/agent-statistics.component';
+import { AgentListScrollComponent } from './agent-list-scroll/agent-list-scroll.component';
 
 export const routes: Routes = [
-    { path: 'agents-home-page', component: HomePageComponent},
+    { path: 'agents-home-page', component: HomePageComponent },
     { path: 'agents', component: AgentListComponent },
+    { path: 'agents-scroll', component: AgentListScrollComponent },
     { path: 'agent-gallery', component: AgentGalleryComponent },
-    { path: 'agent-statistics', component: AgentStatisticsComponent},
+    { path: 'agent-statistics', component: AgentStatisticsComponent },
     {
         path: 'agent/:id', component: AgentDetailComponent,
         children: [
