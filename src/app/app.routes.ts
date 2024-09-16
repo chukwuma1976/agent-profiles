@@ -10,6 +10,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { AgentGalleryComponent } from './agent-gallery/agent-gallery.component';
 import { AgentStatisticsComponent } from './agent-statistics/agent-statistics.component';
 import { AgentListScrollComponent } from './agent-list-scroll/agent-list-scroll.component';
+import { OlympicStatsComponent } from './olympic-stats/olympic-stats.component';
 
 export const routes: Routes = [
     { path: 'agents-home-page', component: HomePageComponent },
@@ -17,6 +18,7 @@ export const routes: Routes = [
     { path: 'agents-scroll', component: AgentListScrollComponent },
     { path: 'agent-gallery', component: AgentGalleryComponent },
     { path: 'agent-statistics', component: AgentStatisticsComponent },
+    { path: 'olympic-statistics', component: OlympicStatsComponent },
     {
         path: 'agent/:id', component: AgentDetailComponent,
         children: [
