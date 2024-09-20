@@ -39,7 +39,7 @@ export class AgentListScrollComponent {
 
   // Column Definitions: Defines the columns to be displayed.
   colDefs: ColDef[] = [
-    { headerName: "First Name", field: 'firstName', checkboxSelection: true },
+    { headerName: "First Name", field: 'firstName', checkboxSelection: true, cellRenderer: "agGroupCellRenderer" },
     { headerName: "Last Name", field: 'lastName' },
     { field: 'age' },
     { field: 'gender' },
@@ -50,6 +50,7 @@ export class AgentListScrollComponent {
     { field: 'role' },
     { headerName: "Action", field: 'id', filter: false, cellRenderer: AgentDetailsButtonRendererComponent }
   ];
+
 
   public rowBuffer = 0;
   public rowSelection: "single" | "multiple" = "multiple";
@@ -62,33 +63,33 @@ export class AgentListScrollComponent {
 
   constructor(private agentsService: AgentsService) { }
 
-  onGridReady(params: GridReadyEvent<User>) {
-    this.agentsService.getUsers()
-      .subscribe((data: any) => {
-        const dataSource: IDatasource = {
-          rowCount: undefined, // behave as infinite scroll
-          getRows: (params: IGetRowsParams) => {
-            console.log(
-              "asking for " + params.startRow + " to " + params.endRow,
-            );
-            // At this point in your code, you would call the server.
-            // To make the demo look real, wait for 500ms before returning
-            setTimeout(() => {
-              // take a slice of the total rows
-              const rowsThisPage = data.users.slice(params.startRow, params.endRow);
-              // if on or after the last page, work out the last row.
-              let lastRow = -1;
-              if (data.users.length <= params.endRow) {
-                lastRow = data.users.length;
-              }
-              // call the success callback
-              params.successCallback(rowsThisPage, lastRow);
-            }, 500);
-          },
-        };
-        params.api!.setGridOption("datasource", dataSource);
-      });
-  }
+  // onGridReady(params: GridReadyEvent<User>) {
+  //   this.agentsService.getUsers()
+  //     .subscribe((data: any) => {
+  //       const dataSource: IDatasource = {
+  //         rowCount: undefined, // behave as infinite scroll
+  //         getRows: (params: IGetRowsParams) => {
+  //           console.log(
+  //             "asking for " + params.startRow + " to " + params.endRow,
+  //           );
+  //           // At this point in your code, you would call the server.
+  //           // To make the demo look real, wait for 500ms before returning
+  //           setTimeout(() => {
+  //             // take a slice of the total rows
+  //             const rowsThisPage = data.users.slice(params.startRow, params.endRow);
+  //             // if on or after the last page, work out the last row.
+  //             let lastRow = -1;
+  //             if (data.users.length <= params.endRow) {
+  //               lastRow = data.users.length;
+  //             }
+  //             // call the success callback
+  //             params.successCallback(rowsThisPage, lastRow);
+  //           }, 500);
+  //         },
+  //       };
+  //       params.api!.setGridOption("datasource", dataSource);
+  //     });
+  // }
 
   onGridReadyBatch(params: GridReadyEvent<User>) {
     let page = 1;
